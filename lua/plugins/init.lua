@@ -44,8 +44,8 @@ return {
 
 	-- LSP
 
-    "neovim/nvim-lspconfig",
-    "williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
+	"williamboman/mason-lspconfig.nvim",
 	"williamboman/mason.nvim", -- simple to use language server installer
 
 	"jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
@@ -70,6 +70,7 @@ return {
 	"ggandor/leap.nvim",
 
 	-- Conform (formatter)
+	"stevearc/conform.nvim",
 
 	-- Nvim scrollbar (for showing diagnostics)
 	"petertriho/nvim-scrollbar",
