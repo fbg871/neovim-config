@@ -3,6 +3,12 @@ if not cmp_status_ok then
 	return
 end
 
+local highlight_colors_status_ok, highlight_colors = pcall(require, "nvim-highlight-colors")
+if not highlight_colors_status_ok then
+	print("Highlight colors not okay")
+	return
+end
+
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
 	print("Luasnip not okay")
@@ -15,6 +21,27 @@ local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
+
+nvim_highlight_colors = highlight_colors.setup({})
+
+luasnip.add_snippets("go", {
+	luasnip.snippet("ife", {
+		luasnip.text_node({ "if err != nil {", "\t" }),
+		luasnip.insert_node(1, "return err"),
+		luasnip.text_node({ "", "}" }),
+	}),
+})
+
+luasnip.add_snippets("typescript", {
+	luasnip.snippet("clg", {
+		luasnip.text_node({ "console.log('" }),
+		luasnip.insert_node(1, "variableName"),
+		luasnip.text_node({ "', " }),
+		luasnip.insert_node(2, "variable"),
+		luasnip.text_node({ ")" }),
+		luasnip.insert_node(0),
+	}),
+})
 
 local kind_icons = {
 	Text = "󰉿",
@@ -51,6 +78,10 @@ cmp.setup({
 		expand = function(args)
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 		end,
+	},
+	preselect = cmp.PreselectMode.None,
+	completion = {
+		completeopt = "menu,menuone,noinsert,noselect",
 	},
 	mapping = {
 		["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -95,6 +126,9 @@ cmp.setup({
 				buffer = "[Buffer]",
 				path = "[Path]",
 			})[entry.source.name]
+
+			-- return require("nvim-highlight-colors")entry, item
+
 			return vim_item
 		end,
 	},

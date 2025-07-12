@@ -10,6 +10,8 @@ conform.setup({
 		typescript = { "prettierd", "prettier" },
 		javascriptreact = { "prettierd", "prettier" },
 		typescriptreact = { "prettierd", "prettier" },
+		html = { "prettierd", "prettier" },
+		tmpl = { "prettierd", "prettier" },
 	},
 	format_on_save = {
 		timeout_ms = 500,

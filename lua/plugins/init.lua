@@ -8,7 +8,7 @@ return {
 	"moll/vim-bbye",
 	-- "nvim-lualine/lualine.nvim",
 	"akinsho/toggleterm.nvim",
-	"ahmedkhalf/project.nvim",
+	-- "ahmedkhalf/project.nvim",
 	"lewis6991/impatient.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	-- use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
@@ -16,6 +16,8 @@ return {
 	"kylechui/nvim-surround",
 	"Bekaboo/deadcolumn.nvim",
 	"wfxr/minimap.vim", -- Minimap
+	"luckasRanarison/tailwind-tools.nvim", -- tailwind tools
+	"nvim-flutter/flutter-tools.nvim",
 
 	-- Colorschemes
 	"folke/tokyonight.nvim",
@@ -33,6 +35,7 @@ return {
 	"morhetz/gruvbox", -- Gruvbox
 
 	"hrsh7th/nvim-cmp", -- The completion pluginhttps://github.com/hrsh7th/nvim-cmp
+	"brenoprata10/nvim-highlight-colors", -- Color highlight for hex and similar
 
 	"hrsh7th/cmp-path", -- path completions
 	"saadparwaiz1/cmp_luasnip", -- snippet completions
@@ -41,6 +44,8 @@ return {
 	-- Snippets
 	"L3MON4D3/LuaSnip", --snippet engine
 	"rafamadriz/friendly-snippets", -- a bunch of snippets to use
+
+	"karb94/neoscroll.nvim", -- smooth scroll
 
 	-- LSP
 
@@ -65,6 +70,8 @@ return {
 
 	-- Git
 	"lewis6991/gitsigns.nvim",
+
+	"akinsho/bufferline.nvim", -- bufferline
 
 	-- Leap
 	"ggandor/leap.nvim",
